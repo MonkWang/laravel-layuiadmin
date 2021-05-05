@@ -1,2 +1,2 @@
 /** -v  License */
- ;layui.define(function(e){var i=(layui.$,layui.layer,layui.laytpl,layui.setter,layui.view,layui.admin);i.events.logout=function(){i.req({url:layui.setter.base+"json/user/logout.js",type:"get",data:{},done:function(e){i.exit(function(){location.href="user/login.html"})}})},e("common",{})});
+ ;layui.define(function(t){var n=layui.$,e=(layui.layer,layui.laytpl,layui.setter,layui.view,layui.admin);e.events.logout=function(){e.req({url:"/logout",type:"post",data:{_token:n('meta[name="csrf-token"]').attr("content")},done:function(t){e.exit(function(){location.href="/login"})}})},t("common",{})});

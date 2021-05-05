@@ -91,7 +91,7 @@ layui.define(['laytpl', 'layer'], function(exports){
       ,dataType: 'json'
       ,success: function(res){
         var statusCode = response.statusCode;
-        
+        console.log(res, response.statusName, statusCode.ok);
         //只有 response 的 code 一切正常才执行 done
         if(res[response.statusName] == statusCode.ok) {
           typeof options.done === 'function' && options.done(res); 
