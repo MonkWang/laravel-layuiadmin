@@ -33,6 +33,6 @@ Route::group(['prex'=>'user'], function(){
 Route::get('/user/administrators/adminform', [AdministratorsController::class, 'adminform'])->name('user.administrators.adminform');
 Route::get('/user/administrators/list', [AdministratorsController::class, 'list'])->name('user.administrators.list');
 Route::get('/user/administrators/role', [AdministratorsController::class, 'role'])->name('user.administrators.role');
-Route::get('/user/administrators/roleform', [AdministratorsController::class, 'roleform'])->name('role.administrators.roleform');
+Route::any('/user/administrators/roleform', [AdministratorsController::class, 'roleform'])->name('role.administrators.roleform');
 
 

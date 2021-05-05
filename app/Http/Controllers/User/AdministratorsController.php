@@ -32,8 +32,15 @@ class AdministratorsController extends Controller
         return view('user.administrators.role');
     }
 
-    public function roleform()
+    public function roleform(Request $request)
     {
+        if($request->method() == 'POST'){
+            $this->selfValidator($request->all(), [
+                'descr' => 'required|string',
+                'rolename' => 'required|int|min:0',
+            ]);
+
+        }
         return view('user.administrators.roleform');
     }
 }

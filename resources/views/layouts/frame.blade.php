@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/layui/css/layui.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/style/admin.css')}}" media="all">
     <script src="{{asset('dist/layuiadmin/layui/layui.js')}}"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
 </head>
 <body>
 

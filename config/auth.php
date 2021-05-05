@@ -41,6 +41,16 @@ return [
             'provider' => 'users',
         ],
 
+        'merchant' => [
+            'driver' => 'session',
+            'provider' => 'merchant',
+        ],
+
+        'store' => [
+            'driver' => 'session',
+            'provider' => 'store',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -67,6 +77,16 @@ return [
 
     'providers' => [
         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+        'merchant' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+        'store' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],

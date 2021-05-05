@@ -27,6 +27,7 @@ class CreatePermissionTables extends Migration
             $table->integer('is_hide')->comment('是否隐藏 1=隐藏 0=显示')->default(0);
             $table->integer('pid')->comment('父ID')->default(0);
             $table->integer('level')->comment('菜单等级')->default(0);
+            $table->tinyInteger('is_menu')->comment('是否是菜单')->default(0);
             $table->timestamps();
 
             $table->unique(['name', 'guard_name']);
