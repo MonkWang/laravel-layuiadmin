@@ -11,7 +11,7 @@
  Target Server Version : 80023
  File Encoding         : 65001
 
- Date: 06/05/2021 09:19:49
+ Date: 06/05/2021 23:19:09
 */
 
 SET NAMES utf8mb4;
@@ -24,20 +24,24 @@ DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` int DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `role` int DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `admins_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admins
 -- ----------------------------
 BEGIN;
+INSERT INTO `admins` VALUES (1, 'admin', NULL, 'admin@admin', NULL, '$2y$10$dJKIHKhwoLWZGVPhJiXbxuNVXH84daNFj9vNvioyBAtr/C0P4sAYq', NULL, NULL, NULL, '2021-05-02 10:55:02', '2021-05-02 10:55:02');
 COMMIT;
 
 -- ----------------------------
@@ -69,20 +73,24 @@ DROP TABLE IF EXISTS `merchants`;
 CREATE TABLE `merchants` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` int DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `role` int DEFAULT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `merchants_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of merchants
 -- ----------------------------
 BEGIN;
+INSERT INTO `merchants` VALUES (1, 'admin', NULL, 'admin@admin', NULL, '$2y$10$dJKIHKhwoLWZGVPhJiXbxuNVXH84daNFj9vNvioyBAtr/C0P4sAYq', NULL, NULL, NULL, '2021-05-02 10:55:02', '2021-05-02 10:55:02');
 COMMIT;
 
 -- ----------------------------
@@ -191,16 +199,16 @@ BEGIN;
 INSERT INTO `permissions` VALUES (1, '主页', 'web', 0, 0, NULL, NULL, 1, NULL, 1);
 INSERT INTO `permissions` VALUES (2, '控制台', 'web', 1, 0, NULL, NULL, 1, 'home.console', 1);
 INSERT INTO `permissions` VALUES (3, '权限', 'web', 0, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (4, '权限管理', 'web', 3, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (5, '角色管理', 'web', 3, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (6, '管理员管理', 'web', 3, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (7, '设置', 'web', 0, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (8, '系统设置', 'web', 7, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (9, '我的设置', 'web', 7, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (10, '用户', 'web', 0, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (11, '商户管理', 'web', 10, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (12, '店铺管理', 'web', 10, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (13, '用户管理', 'web', 10, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (4, '权限管理', 'web', 3, 0, NULL, NULL, 1, 'admin.permission.permission.list', 1);
+INSERT INTO `permissions` VALUES (5, '角色管理', 'web', 3, 0, NULL, NULL, 1, 'admin.permission.role.list', 1);
+INSERT INTO `permissions` VALUES (6, '管理员管理', 'web', 3, 0, NULL, NULL, 1, 'admin.permission.member.list', 1);
+INSERT INTO `permissions` VALUES (7, '设置', 'web', 0, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (8, '系统设置', 'web', 7, 0, NULL, NULL, 1, 'admin.set.system.website', 1);
+INSERT INTO `permissions` VALUES (9, '我的设置', 'web', 7, 0, NULL, NULL, 1, 'admin.set.system.website', 1);
+INSERT INTO `permissions` VALUES (10, '用户', 'web', 0, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (11, '商户管理', 'web', 10, 0, NULL, NULL, 1, 'admin.user.merchant.list', 1);
+INSERT INTO `permissions` VALUES (12, '店铺管理', 'web', 10, 0, NULL, NULL, 1, 'admin.user.store.list', 1);
+INSERT INTO `permissions` VALUES (13, '用户管理', 'web', 10, 0, NULL, NULL, 1, 'admin.user.user.list', 1);
 INSERT INTO `permissions` VALUES (14, '主页', 'merchant', 0, 0, NULL, NULL, 1, NULL, 1);
 INSERT INTO `permissions` VALUES (15, '控制台', 'merchant', 14, 0, NULL, NULL, 1, NULL, 1);
 INSERT INTO `permissions` VALUES (16, '权限', 'merchant', 0, 0, NULL, NULL, 1, NULL, 1);
@@ -287,20 +295,24 @@ DROP TABLE IF EXISTS `stores`;
 CREATE TABLE `stores` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` int DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` int DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `stores_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of stores
 -- ----------------------------
 BEGIN;
+INSERT INTO `stores` VALUES (1, 'admin', NULL, 'admin@admin', NULL, '$2y$10$dJKIHKhwoLWZGVPhJiXbxuNVXH84daNFj9vNvioyBAtr/C0P4sAYq', NULL, NULL, NULL, '2021-05-02 10:55:02', '2021-05-02 10:55:02');
 COMMIT;
 
 -- ----------------------------
