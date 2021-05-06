@@ -1,9 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\User\AdministratorsController;
+use App\Http\Controllers\Admin\{
+        Set\System as SetSystem,
+        Set\User as SetUser,
+        User\Merchant,
+        User\Store,
+        User\UserController,
+        Permission\Permission,
+        Permission\Role,
+        HomeController,
+};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,18 +28,33 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//首页
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/console', [HomeController::class, 'console'])->name('home.console');
-Route::get('/homepage1', [HomeController::class, 'homepage1'])->name('home.homepage1');
-Route::get('/homepage2', [HomeController::class, 'homepage2'])->name('home.homepage2');
+Route::get('/home/console', [HomeController::class, 'console'])->name('home.console');
 
-Route::group(['prex'=>'user'], function(){
-    Route::get('user/list',[UserController::class, 'list'])->name('user.user.list');
+//用户
+Route::group(['prefix'=>'user'], function(){
+    Route::get('user/list',[UserController::class, 'list'])->name('admin.user.user.list');
+    Route::get('user/userform',[UserController::class, 'userform'])->name('admin.user.user.userform');
+    Route::get('merchant/list', [Merchant::class, 'list'])->name('admin.user.merchant.list');
+    Route::get('store/list', [Store::class, 'list'])->name('admin.user.store.list');
 });
 
-Route::get('/user/administrators/adminform', [AdministratorsController::class, 'adminform'])->name('user.administrators.adminform');
-Route::get('/user/administrators/list', [AdministratorsController::class, 'list'])->name('user.administrators.list');
-Route::get('/user/administrators/role', [AdministratorsController::class, 'role'])->name('user.administrators.role');
-Route::any('/user/administrators/roleform', [AdministratorsController::class, 'roleform'])->name('role.administrators.roleform');
+//权限
+Route::group(['prefix'=>'permission'], function(){
+    Route::get('permission/adminform', [Permission::class, 'adminform'])->name('admin.permission.permission.adminform');
+    Route::get('permission/list', [Permission::class, 'list'])->name('admin.permission.permission.list');
+    Route::get('role/role', [Role::class, 'role'])->name('admin.permission.role.role');
+    Route::any('role/roleform', [Role::class, 'roleform'])->name('admin.permission.role.roleform');
+});
+
+//设置
+Route::group(['prefix'=> 'set'], function(){
+    Route::get('system/website', [SetSystem::class, 'website'])->name('admin.set.system.website');
+    Route::get('system/email', [SetSystem::class, 'email'])->name('admin.set.system.email');
+    Route::get('user/info', [SetUser::class, 'info'])->name('admin.set.user.info');
+    Route::get('user/password', [SetUser::class, 'password'])->name('admin.set.user.password');
+});
+
 
 

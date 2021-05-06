@@ -3,14 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="4827fa2a-be01-40f8-8b42-5d07e205a166" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/AdministratorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/AdministratorsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/AdministratorsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Merchant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Merchant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Store.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_04_094501_create_permission_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_04_094501_create_permission_tables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frame.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frame.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/administrators/role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/roleform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/administrators/roleform.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/permissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/set/system/email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/set/system/website.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/set/user/info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/set/user/password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/set/说明.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/adminform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/role.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/roleform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user/list.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user/userform.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user/userform.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +167,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -159,11 +175,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/database/migrations" />
-      <recent name="$PROJECT_DIR$/resources/views/user/user" />
-      <recent name="$PROJECT_DIR$/resources/views/user/administrators" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/User" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/user/user" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/user/store" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/user/merchant" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/permission" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/permission/permission" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/permission/role" />
     </key>
   </component>
   <component name="RunManager">
@@ -189,7 +209,7 @@
       <workItem from="1620007289474" duration="3019000" />
       <workItem from="1620116887331" duration="5183000" />
       <workItem from="1620133542446" duration="371000" />
-      <workItem from="1620134053618" duration="20263000" />
+      <workItem from="1620134053618" duration="27494000" />
     </task>
     <servers />
   </component>

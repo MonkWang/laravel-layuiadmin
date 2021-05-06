@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin\Permission;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdministratorsController extends Controller
+class Role extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,19 +17,9 @@ class AdministratorsController extends Controller
 //        $this->middleware('auth');
     }
 
-    public function adminform()
-    {
-        return view('user.administrators.adminform');
-    }
-
-    public function list()
-    {
-        return view('user.administrators.list');
-    }
-
     public function role()
     {
-        return view('user.administrators.role');
+        return view('admin.permission.role.role');
     }
 
     public function roleform(Request $request)
@@ -41,6 +31,6 @@ class AdministratorsController extends Controller
             ]);
 
         }
-        return view('user.administrators.roleform');
+        return view('admin.permission.role.roleform');
     }
 }

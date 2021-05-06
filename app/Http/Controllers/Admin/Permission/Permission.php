@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\User;
-
+namespace App\Http\Controllers\Admin\Permission;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class Permission extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,10 +17,13 @@ class UserController extends Controller
 //        $this->middleware('auth');
     }
 
+    public function adminform()
+    {
+        return view('admin.permission.permission.adminform');
+    }
 
     public function list()
     {
-        return view('user.user.list');
+        return view('admin.permission.permission.list');
     }
-
 }

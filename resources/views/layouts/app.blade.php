@@ -100,13 +100,6 @@
                             <dd data-name="console" class="layui-this">
                                 <a lay-href="{{route('home.console')}}">控制台</a>
                             </dd>
-                            <dd data-name="console">
-{{--                                <a lay-href="home/homepage1.html">主页一</a>--}}
-                                <a lay-href="{{route('home.homepage1')}}">主页一</a>
-                            </dd>
-                            <dd data-name="console">
-                                <a lay-href="{{route('home.homepage2')}}">主页二</a>
-                            </dd>
                         </dl>
                     </li>
                     <li data-name="user" class="layui-nav-item">
@@ -116,34 +109,29 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a lay-href="{{route('user.user.list')}}">网站用户</a>
+                                <a lay-href="{{route('admin.user.user.list')}}">网站用户</a>
                             </dd>
                             <dd>
-                                <a lay-href="{{route('user.administrators.list')}}">后台管理员</a>
+                                <a lay-href="{{route('admin.user.merchant.list')}}">商户用户</a>
                             </dd>
                             <dd>
-                                <a lay-href="{{route('user.administrators.role')}}">角色管理</a>
+                                <a lay-href="{{route('admin.user.store.list')}}">门店用户</a>
                             </dd>
                         </dl>
                     </li>
-                    <li data-name="template" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="页面" lay-direction="2">
-                            <i class="layui-icon layui-icon-template"></i>
-                            <cite>页面</cite>
+
+                    <li data-name="permission" class="layui-nav-item">
+                        <a href="javascript:;" lay-tips="权限" lay-direction="2">
+                            <i class="layui-icon layui-icon-user"></i>
+                            <cite>权限</cite>
                         </a>
                         <dl class="layui-nav-child">
-                            <dd><a lay-href="template/personalpage.html">个人主页</a></dd>
-                            <dd><a lay-href="template/addresslist.html">通讯录</a></dd>
-                            <dd><a lay-href="template/caller.html">客户列表</a></dd>
-                            <dd><a lay-href="template/goodslist.html">商品列表</a></dd>
-                            <dd><a lay-href="template/msgboard.html">留言板</a></dd>
-                            <dd><a lay-href="template/search.html">搜索结果</a></dd>
-                            <dd><a href="user/reg.html" target="_blank">注册</a></dd>
-                            <dd><a href="user/login.html" target="_blank">登入</a></dd>
-                            <dd><a href="user/forget.html" target="_blank">忘记密码</a></dd>
-                            <dd><a lay-href="template/tips/404.html">404页面不存在</a></dd>
-                            <dd><a lay-href="template/tips/error.html">错误提示</a></dd>
-                            <dd><a lay-href="//www.baidu.com/">百度一下</a></dd>
+                            <dd>
+                                <a lay-href="{{route('admin.permission.permission.list')}}">权限管理</a>
+                            </dd>
+                            <dd>
+                                <a lay-href="{{route('admin.permission.role.role')}}">角色管理</a>
+                            </dd>
                         </dl>
                     </li>
 
@@ -156,15 +144,15 @@
                             <dd class="layui-nav-itemed">
                                 <a href="javascript:;">系统设置</a>
                                 <dl class="layui-nav-child">
-                                    <dd><a lay-href="set/system/website.html">网站设置</a></dd>
-                                    <dd><a lay-href="set/system/email.html">邮件服务</a></dd>
+                                    <dd><a lay-href="{{route('admin.set.system.website')}}">网站设置</a></dd>
+                                    <dd><a lay-href="{{route('admin.set.system.email')}}">邮件服务</a></dd>
                                 </dl>
                             </dd>
                             <dd class="layui-nav-itemed">
                                 <a href="javascript:;">我的设置</a>
                                 <dl class="layui-nav-child">
-                                    <dd><a lay-href="set/user/info.html">基本资料</a></dd>
-                                    <dd><a lay-href="set/user/password.html">修改密码</a></dd>
+                                    <dd><a lay-href="{{route('admin.set.user.info')}}">基本资料</a></dd>
+                                    <dd><a lay-href="{{route('admin.set.user.password')}}">修改密码</a></dd>
                                 </dl>
                             </dd>
                         </dl>

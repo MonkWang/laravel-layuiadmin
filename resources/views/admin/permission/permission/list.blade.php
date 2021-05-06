@@ -1,20 +1,5 @@
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>layuiAdmin 后台管理员</title>
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css" media="all">
-  <link rel="stylesheet" href="../../../layuiadmin/style/admin.css" media="all">
-</head>
-<body>
-
-  <div class="layui-fluid">   
-    <div class="layui-card">
+@extends('layouts.frame')
+@section('content')
       <div class="layui-form layui-card-header layuiadmin-card-header-auto">
         <div class="layui-form-item">
           <div class="layui-inline">
@@ -65,39 +50,97 @@
         
         <table id="LAY-user-back-manage" lay-filter="LAY-user-back-manage"></table>  
         <script type="text/html" id="buttonTpl">
-          {{#  if(d.check == true){ }}
             <button class="layui-btn layui-btn-xs">已审核</button>
-          {{#  } else { }}
-            <button class="layui-btn layui-btn-primary layui-btn-xs">未审核</button>
-          {{#  } }}
+
         </script>
         <script type="text/html" id="table-useradmin-admin">
           <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
-          {{#  if(d.role == '超级管理员'){ }}
-            <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</a>
-          {{#  } else { }}
+
             <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
-          {{#  } }}
         </script>
       </div>
-    </div>
-  </div>
-
- <script src="../../../layuiadmin/layui/layui.js"></script>  
+@endsection
+@section('content_script')
+ <script src="{{asset('dist/layuiadmin/layui/layui.js')}}"></script>
   <script>
   layui.config({
-    base: '../../../layuiadmin/' //静态资源所在路径
+    base: '../../../dist/layuiadmin/' //静态资源所在路径
   }).extend({
     index: 'lib/index' //主入口模块
   }).use(['index', 'useradmin', 'table'], function(){
     var $ = layui.$
     ,form = layui.form
     ,table = layui.table;
+
+    //管理员管理
+    table.render({
+      elem: '#LAY-user-back-manage'
+      ,url: layui.setter.base + 'json/useradmin/mangadmin.js' //模拟接口
+      ,cols: [[
+        {type: 'checkbox', fixed: 'left'}
+        ,{field: 'id', width: 80, title: 'ID', sort: true}
+        ,{field: 'loginname', title: '登录名'}
+        ,{field: 'telphone', title: '手机'}
+        ,{field: 'email', title: '邮箱'}
+        ,{field: 'role', title: '角色'}
+        ,{field: 'jointime', title: '加入时间', sort: true}
+        ,{field: 'check', title:'审核状态', templet: '#buttonTpl', minWidth: 80, align: 'center'}
+        ,{title: '操作', width: 150, align: 'center', fixed: 'right', toolbar: '#table-useradmin-admin'}
+      ]]
+      ,text: '对不起，加载出现异常！'
+    });
+
+    //监听工具条
+    table.on('tool(LAY-user-back-manage)', function(obj){
+      var data = obj.data;
+      if(obj.event === 'del'){
+        layer.prompt({
+          formType: 1
+          ,title: '敏感操作，请验证口令'
+        }, function(value, index){
+          layer.close(index);
+          layer.confirm('确定删除此管理员？', function(index){
+            console.log(obj)
+            obj.del();
+            layer.close(index);
+          });
+        });
+      }else if(obj.event === 'edit'){
+        var tr = $(obj.tr);
+
+        layer.open({
+          type: 2
+          ,title: '编辑管理员'
+          ,content: '../../../views/user/administrators/adminform.html'
+          ,area: ['420px', '420px']
+          ,btn: ['确定', '取消']
+          ,yes: function(index, layero){
+            var iframeWindow = window['layui-layer-iframe'+ index]
+                    ,submitID = 'LAY-user-back-submit'
+                    ,submit = layero.find('iframe').contents().find('#'+ submitID);
+
+            //监听提交
+            iframeWindow.layui.form.on('submit('+ submitID +')', function(data){
+              var field = data.field; //获取提交的字段
+
+              //提交 Ajax 成功后，静态更新表格中的数据
+              //$.ajax({});
+              table.reload('LAY-user-front-submit'); //数据刷新
+              layer.close(index); //关闭弹层
+            });
+
+            submit.trigger('click');
+          }
+          ,success: function(layero, index){
+
+          }
+        })
+      }
+    });
     
     //监听搜索
     form.on('submit(LAY-user-back-search)', function(data){
       var field = data.field;
-      
       //执行重载
       table.reload('LAY-user-back-manage', {
         where: field
@@ -109,7 +152,6 @@
       batchdel: function(){
         var checkStatus = table.checkStatus('LAY-user-back-manage')
         ,checkData = checkStatus.data; //得到选中的数据
-
         if(checkData.length === 0){
           return layer.msg('请选择数据');
         }
@@ -121,14 +163,6 @@
           layer.close(index);
           
           layer.confirm('确定删除吗？', function(index) {
-            
-            //执行 Ajax 后重载
-            /*
-            admin.req({
-              url: 'xxx'
-              //,……
-            });
-            */
             table.reload('LAY-user-back-manage');
             layer.msg('已删除');
           });
@@ -138,7 +172,7 @@
         layer.open({
           type: 2
           ,title: '添加管理员'
-          ,content: 'adminform.html'
+          ,content: '{{route('admin.permission.permission.adminform')}}'
           ,area: ['420px', '420px']
           ,btn: ['确定', '取消']
           ,yes: function(index, layero){
@@ -154,19 +188,17 @@
               //$.ajax({});
               table.reload('LAY-user-front-submit'); //数据刷新
               layer.close(index); //关闭弹层
-            });  
-            
+            });
             submit.trigger('click');
           }
         }); 
       }
-    }  
+    }
     $('.layui-btn.layuiadmin-btn-admin').on('click', function(){
       var type = $(this).data('type');
       active[type] ? active[type].call(this) : '';
     });
   });
   </script>
-</body>
-</html>
+@endsection
 
