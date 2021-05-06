@@ -17,9 +17,9 @@ class Role extends Controller
 //        $this->middleware('auth');
     }
 
-    public function role()
+    public function list()
     {
-        return view('admin.permission.role.role');
+        return view('admin.permission.role.list');
     }
 
     public function roleform(Request $request)

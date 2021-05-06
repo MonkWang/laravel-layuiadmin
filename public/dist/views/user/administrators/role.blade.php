@@ -22,9 +22,10 @@
       <div class="layui-card-body">
         <div style="padding-bottom: 10px;">
           <button class="layui-btn layuiadmin-btn-role" data-type="batchdel">删除</button>
-          <button class="layui-btn layuiadmin-btn-role" data-type="add">添加</button>
+          <a href="{{route('role.administrators.roleform')}}">
+            <button class="layui-btn">添加</button>
+          </a>
         </div>
-      
         <table id="LAY-user-back-role" lay-filter="LAY-user-back-role"></table>  
         <script type="text/html" id="buttonTpl">
             <button class="layui-btn layui-btn-xs">已审核</button>
@@ -131,7 +132,7 @@
         layer.open({
           type: 2
           ,title: '添加新角色'
-          ,content: 'roleform.html'
+          ,content: ''
           ,area: ['500px', '480px']
           ,btn: ['确定', '取消']
           ,yes: function(index, layero){
@@ -141,16 +142,16 @@
             //监听提交
             iframeWindow.layui.form.on('submit(LAY-user-role-submit)', function(data){
               var field = data.field; //获取提交的字段
-              
+
               //提交 Ajax 成功后，静态更新表格中的数据
-              //$.ajax({});              
+              //$.ajax({});
               table.reload('LAY-user-back-role');
               layer.close(index); //关闭弹层
-            });  
-            
+            });
+
             submit.trigger('click');
           }
-        }); 
+        });
       }
     }  
     $('.layui-btn.layuiadmin-btn-role').on('click', function(){

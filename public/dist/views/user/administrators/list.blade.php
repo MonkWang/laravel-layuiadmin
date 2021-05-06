@@ -193,7 +193,7 @@
           }
         }); 
       }
-    }  
+    }
     $('.layui-btn.layuiadmin-btn-admin').on('click', function(){
       var type = $(this).data('type');
       active[type] ? active[type].call(this) : '';

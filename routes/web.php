@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
         Set\System as SetSystem,
-        Set\User as SetUser,
         User\Merchant,
         User\Store,
         User\UserController,
         Permission\Permission,
         Permission\Role,
+        Permission\Admin,
         HomeController,
 };
 /*
@@ -42,18 +42,18 @@ Route::group(['prefix'=>'user'], function(){
 
 //权限
 Route::group(['prefix'=>'permission'], function(){
-    Route::get('permission/adminform', [Permission::class, 'adminform'])->name('admin.permission.permission.adminform');
     Route::get('permission/list', [Permission::class, 'list'])->name('admin.permission.permission.list');
-    Route::get('role/role', [Role::class, 'role'])->name('admin.permission.role.role');
+    Route::get('permission/adminform', [Permission::class, 'adminform'])->name('admin.permission.permission.adminform');
+    Route::get('role/list', [Role::class, 'list'])->name('admin.permission.role.list');
     Route::any('role/roleform', [Role::class, 'roleform'])->name('admin.permission.role.roleform');
+    Route::any('member/list', [Admin::class, 'list'])->name('admin.permission.member.list');
+    Route::get('member/adminform', [Admin::class, 'adminform'])->name('admin.permission.member.adminform');
+
 });
 
 //设置
 Route::group(['prefix'=> 'set'], function(){
     Route::get('system/website', [SetSystem::class, 'website'])->name('admin.set.system.website');
-    Route::get('system/email', [SetSystem::class, 'email'])->name('admin.set.system.email');
-    Route::get('user/info', [SetUser::class, 'info'])->name('admin.set.user.info');
-    Route::get('user/password', [SetUser::class, 'password'])->name('admin.set.user.password');
 });
 
 

@@ -19,6 +19,9 @@ class CreateAdminsTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('phone')->comment('手机号');
+            $table->tinyInteger('status')->default(1)->comment('状态');
+            $table->integer('role')->comment('角色');
             $table->rememberToken();
             $table->timestamps();
         });

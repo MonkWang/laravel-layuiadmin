@@ -91,78 +91,24 @@
                 </div>
 
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
-                    <li data-name="home" class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;" lay-tips="主页" lay-direction="2">
-                            <i class="layui-icon layui-icon-home"></i>
-                            <cite>主页</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd data-name="console" class="layui-this">
-                                <a lay-href="{{route('home.console')}}">控制台</a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li data-name="user" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="用户" lay-direction="2">
-                            <i class="layui-icon layui-icon-user"></i>
-                            <cite>用户</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a lay-href="{{route('admin.user.user.list')}}">网站用户</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="{{route('admin.user.merchant.list')}}">商户用户</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="{{route('admin.user.store.list')}}">门店用户</a>
-                            </dd>
-                        </dl>
-                    </li>
+                    @forelse($menus as $menu)
+                        <li class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="主页">
+                                <i class="layui-icon layui-icon-home"></i>
+                                <cite>{{$menu->name}}</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                @forelse($menu->child_hasMany as $m)
+                                <dd>
+                                    <a lay-href="{{route($m->route)}}">{{$m->name}}</a>
+                                </dd>
+                                @empty
+                                @endforelse
+                            </dl>
+                        </li>
+                    @empty
+                    @endforelse
 
-                    <li data-name="permission" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="权限" lay-direction="2">
-                            <i class="layui-icon layui-icon-user"></i>
-                            <cite>权限</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a lay-href="{{route('admin.permission.permission.list')}}">权限管理</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="{{route('admin.permission.role.role')}}">角色管理</a>
-                            </dd>
-                        </dl>
-                    </li>
-
-                    <li data-name="set" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="设置" lay-direction="2">
-                            <i class="layui-icon layui-icon-set"></i>
-                            <cite>设置</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd class="layui-nav-itemed">
-                                <a href="javascript:;">系统设置</a>
-                                <dl class="layui-nav-child">
-                                    <dd><a lay-href="{{route('admin.set.system.website')}}">网站设置</a></dd>
-                                    <dd><a lay-href="{{route('admin.set.system.email')}}">邮件服务</a></dd>
-                                </dl>
-                            </dd>
-                            <dd class="layui-nav-itemed">
-                                <a href="javascript:;">我的设置</a>
-                                <dl class="layui-nav-child">
-                                    <dd><a lay-href="{{route('admin.set.user.info')}}">基本资料</a></dd>
-                                    <dd><a lay-href="{{route('admin.set.user.password')}}">修改密码</a></dd>
-                                </dl>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li data-name="get" class="layui-nav-item">
-                        <a href="javascript:;" layadmin-event="about" lay-tips="授权" lay-direction="2">
-                            <i class="layui-icon layui-icon-auz"></i>
-                            <cite>关于</cite>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

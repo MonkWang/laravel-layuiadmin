@@ -11,9 +11,4 @@ class System extends Controller
     {
         return view('admin.set.system.website');
     }
-
-    public function email()
-    {
-        return view('admin.set.system.email');
-    }
 }
