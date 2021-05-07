@@ -11,7 +11,7 @@
  Target Server Version : 80023
  File Encoding         : 65001
 
- Date: 06/05/2021 23:19:09
+ Date: 07/05/2021 23:11:50
 */
 
 SET NAMES utf8mb4;
@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` int DEFAULT NULL,
+  `phone` bigint DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -35,13 +35,14 @@ CREATE TABLE `admins` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `admins_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admins
 -- ----------------------------
 BEGIN;
 INSERT INTO `admins` VALUES (1, 'admin', NULL, 'admin@admin', NULL, '$2y$10$dJKIHKhwoLWZGVPhJiXbxuNVXH84daNFj9vNvioyBAtr/C0P4sAYq', NULL, NULL, NULL, '2021-05-02 10:55:02', '2021-05-02 10:55:02');
+INSERT INTO `admins` VALUES (2, '33', 13333333333, '33@33.com', NULL, '$2y$10$D5iMWhbK/IrQYnGzcTb/Xu3tRQjWhNriRJSGinuiSZkw2pw8Fl7WK', 0, 33, NULL, NULL, NULL);
 COMMIT;
 
 -- ----------------------------
