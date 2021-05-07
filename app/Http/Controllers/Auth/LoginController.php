@@ -112,7 +112,7 @@ class LoginController extends Controller
         }
 
         $redirect = $request->header('referer') == route('login') ? '/home' : $request->header('referer');
-        return response()->json(['code'=>0, 'redirect'=>$redirect]);
+        return response()->json(['code'=>200, 'href'=>$redirect]);
     }
 
     public function username()

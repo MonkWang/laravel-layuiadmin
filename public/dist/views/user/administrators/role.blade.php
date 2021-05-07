@@ -22,7 +22,7 @@
       <div class="layui-card-body">
         <div style="padding-bottom: 10px;">
           <button class="layui-btn layuiadmin-btn-role" data-type="batchdel">删除</button>
-          <a href="{{route('role.administrators.roleform')}}">
+          <a href="{{route('admin.permission.role.roleform')}}">
             <button class="layui-btn">添加</button>
           </a>
         </div>

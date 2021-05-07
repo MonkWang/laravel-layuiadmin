@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/layui/css/layui.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/style/admin.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/style/login.css')}}" media="all">
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/axios.js')}}"></script>
 </head>
 <body>
 
@@ -41,7 +43,7 @@
                     </div>
                     <div class="layui-col-xs5">
                         <div style="margin-left: 10px;">
-                            <img src="https://www.oschina.net/action/user/captcha" class="layadmin-user-login-codeimg" id="LAY-user-get-vercode">
+                            <img src="{{captcha_src()}}" onclick="this.src='{{captcha_src()}}'+Math.random()" title="点击图片重新获取验证码">
                         </div>
                     </div>
                 </div>
@@ -61,14 +63,14 @@
         <p>© 2018</p>
     </div>
 </div>
-
 <script src="{{asset('dist/layuiadmin/layui/layui.js')}}"></script>
+<script src="{{asset('js/selfjs.js')}}"></script>
 <script>
-    layui.config({
-        base: '../../dist/layuiadmin/' //静态资源所在路径
-    }).extend({
-        index: 'lib/index' //主入口模块
-    }).use(['index', 'user'], function(){
+    let obj = {
+        module: ['form']
+    }
+    $.selfLayui(obj)
+    layui.use('form', function(){
         var $ = layui.$
             ,setter = layui.setter
             ,admin = layui.admin
@@ -78,32 +80,7 @@
         form.render();
         //提交
         form.on('submit(LAY-user-login-submit)', function(obj){
-
-            obj.field['_token'] = $('meta[name="csrf-token"]').attr('content')
-            //请求登入接口
-            admin.req({
-                url: '{{route("login")}}' //实际使用请改成服务端真实接口
-                ,method: 'post'
-                ,data: obj.field
-                ,done: function(res){
-                    //请求成功后，写入 access_token
-                    if(res.code == 0){
-                        // layui.data(setter.tableName, {
-                        //     key: setter.request.tokenName
-                        //     ,value: res.data.access_token
-                        // });
-
-                        //登入成功的提示与跳转
-                        layer.msg('登入成功', {
-                            offset: '15px'
-                            ,icon: 1
-                            ,time: 1000
-                        }, function(){
-                            location.href = res.redirect; //后台主页
-                        });
-                    }
-                }
-            });
+            $.selfPost('{{route("login")}}', obj.field)
         });
 
     });

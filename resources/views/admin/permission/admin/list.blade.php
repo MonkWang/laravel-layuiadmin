@@ -47,8 +47,19 @@
           <button class="layui-btn layuiadmin-btn-admin" data-type="batchdel">删除</button>
           <button class="layui-btn layuiadmin-btn-admin" data-type="add">添加</button>
         </div>
-        
-        <table id="LAY-user-back-manage" lay-filter="LAY-user-back-manage"></table>  
+
+        <table class="layui-table" lay-data="{url:'{{route("admin.permission.member.list")}}', method: 'post', where: {_token: '{{csrf_token()}}'}, id:'LAY-user-back-manage'}" lay-filter="LAY-user-back-manage">
+          <thead>
+          <tr>
+            <th lay-data="{field:'id', width:80, sort: true}">ID</th>
+            <th lay-data="{field:'name', width:80}">用户名</th>
+            <th lay-data="{field:'sex', width:80, sort: true}">性别</th>
+            <th lay-data="{field:'telphone'}">手机</th>
+            <th lay-data="{field:'role'}">角色</th>
+            <th lay-data="{field:''}">操作</th>
+          </tr>
+          </thead>
+        </table>
         <script type="text/html" id="buttonTpl">
             <button class="layui-btn layui-btn-xs">已审核</button>
 
@@ -61,150 +72,6 @@
       </div>
 @endsection
 @section('content_script')
-  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
   <script src="{{asset('dist/layuiadmin/layui/layui.js')}}"></script>
-  <script>
-  layui.config({
-    base: '../../../dist/layuiadmin/' //静态资源所在路径
-  }).extend({
-    index: 'lib/index' //主入口模块
-  }).use(['index', 'useradmin', 'table', 'form'], function(){
-    var $ = layui.$
-    ,form = layui.form
-    ,table = layui.table;
-
-    //管理员管理
-    table.render({
-      elem: '#LAY-user-back-manage'
-      ,url: "{{route('admin.permission.member.list')}}" //模拟接口
-      ,method: 'post'
-      ,where: {_token: '{{csrf_token()}}'}
-      ,cols: [[
-        {type: 'checkbox', fixed: 'left'}
-        ,{field: 'id', width: 80, title: 'ID', sort: true}
-        ,{field: 'name', title: '登录名'}
-        ,{field: 'telphone', title: '手机'}
-        ,{field: 'role', title: '角色'}
-        ,{field: 'jointime', title: '加入时间', sort: true}
-        ,{field: 'check', title:'审核状态', templet: '#buttonTpl', minWidth: 80, align: 'center'}
-        ,{title: '操作', width: 150, align: 'center', fixed: 'right', toolbar: '#table-useradmin-admin'}
-      ]]
-      ,text: '对不起，加载出现异常！'
-    });
-
-    //监听工具条
-    table.on('tool(LAY-user-back-manage)', function(obj){
-      var data = obj.data;
-      if(obj.event === 'del'){
-        layer.prompt({
-          formType: 1
-          ,title: '敏感操作，请验证口令'
-        }, function(value, index){
-          layer.close(index);
-          layer.confirm('确定删除此管理员？', function(index){
-            console.log(obj)
-            obj.del();
-            layer.close(index);
-          });
-        });
-      }else if(obj.event === 'edit'){
-        var tr = $(obj.tr);
-
-        layer.open({
-          type: 2
-          ,title: '编辑管理员'
-          ,content: '../../../views/user/administrators/adminform.html'
-          ,area: ['420px', '420px']
-          ,btn: ['确定', '取消']
-          ,yes: function(index, layero){
-            var iframeWindow = window['layui-layer-iframe'+ index]
-                    ,submitID = 'LAY-user-back-submit'
-                    ,submit = layero.find('iframe').contents().find('#'+ submitID);
-
-            //监听提交
-            // iframeWindow.layui.form.on('submit('+ submitID +')', function(data){
-            //   var field = data.field; //获取提交的字段
-            //
-            //   //提交 Ajax 成功后，静态更新表格中的数据
-            //   //$.ajax({});
-            //   table.reload('LAY-user-front-submit'); //数据刷新
-            //   layer.close(index); //关闭弹层
-            // });
-
-            submit.trigger('click');
-          }
-          ,success: function(layero, index){
-
-          }
-        })
-      }
-    });
-    
-    //监听搜索
-    form.on('submit(LAY-user-back-search)', function(data){
-      var field = data.field;
-      //执行重载
-      table.reload('LAY-user-back-manage', {
-        where: field
-      });
-    });
-  
-    //事件
-    var active = {
-      batchdel: function(){
-        var checkStatus = table.checkStatus('LAY-user-back-manage')
-        ,checkData = checkStatus.data; //得到选中的数据
-        if(checkData.length === 0){
-          return layer.msg('请选择数据');
-        }
-        
-        layer.prompt({
-          formType: 1
-          ,title: '敏感操作，请验证口令'
-        }, function(value, index){
-          layer.close(index);
-          
-          layer.confirm('确定删除吗？', function(index) {
-            table.reload('LAY-user-back-manage');
-            layer.msg('已删除');
-          });
-        }); 
-      }
-      ,add: function(){
-        layer.open({
-          type: 2
-          ,title: '添加管理员'
-          ,content: '{{route('admin.permission.member.adminform')}}'
-          ,area: ['420px', '420px']
-          ,btn: ['确定', '取消']
-          ,yes: function(index, layero){
-
-            var iframeWindow = window['layui-layer-iframe'+ index]
-            ,submitID = 'LAY-user-back-submit'
-            ,submit = layero.find('iframe').contents().find('#'+ submitID);
-            // 监听提交
-            console.log(layero, submitID)
-            iframeWindow.layui.form.on('submit(LAY-user-front-submit)', function(data){
-              var field = data.field; //获取提交的字段
-              alert(33);
-              //提交 Ajax 成功后，静态更新表格中的数据
-              // $.ajax({});
-              // axios.post('www.baidu.com', field).then(res=>{
-              //
-              // })
-              // table.reload('LAY-user-front-submit'); //数据刷新
-              // layer.close(index); //关闭弹层
-            });
-            submit.trigger('click');
-          }
-        }); 
-      }
-    }
-    $('.layui-btn.layuiadmin-btn-admin').on('click', function(){
-      var type = $(this).data('type');
-      active[type] ? active[type].call(this) : '';
-    });
-  });
-  </script>
 @endsection
 

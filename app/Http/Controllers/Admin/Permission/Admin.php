@@ -26,8 +26,18 @@ class Admin extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'role' => 'required',
-                'status'=> 'required'
-            ]);
+//                'status'=> 'required'
+            ], []);
+            $data = [
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'password' => password_hash('admin', PASSWORD_BCRYPT),
+                'email' => $request ->email,
+                'role' => $request->role,
+                'status' => $request->status ?:0,
+            ];
+            \App\Models\Admin::insert($data);
+            return response()->json(['code'=>200, 'msg'=>'添加成功']);
         }
         return view('admin.permission.admin.adminform');
     }

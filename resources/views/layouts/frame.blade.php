@@ -11,26 +11,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/layui/css/layui.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('dist/layuiadmin/style/admin.css')}}" media="all">
+    <script src="{{asset('js/axios.js')}}"></script>
     <script src="{{asset('dist/layuiadmin/layui/layui.js')}}"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/selfjs.js')}}"></script>
 </head>
 <body>
 
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
-
     @yield('content')
-
     </div>
 </div>
-
-<script>
-    layui.config({
-        base: '../../dist/layuiadmin/' //静态资源所在路径
-    }).extend({
-        index: 'lib/index' //主入口模块
-    }).use(['index', 'console']);
-</script>
 @yield('content_script')
 </body>
 </html>

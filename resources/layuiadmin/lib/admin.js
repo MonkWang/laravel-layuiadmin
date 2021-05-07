@@ -28,87 +28,21 @@ layui.define('view', function(exports){
     v: '1.6.1 std'
     
     //数据的异步请求
-    ,req: view.req
+    // ,req: view.req
     
     //清除本地 token，并跳转到登入页
-    ,exit: view.exit
+    // ,exit: view.exit
     
     //xss 转义
-    ,escape: function(html){
-      return String(html || '').replace(/&(?!#?[a-zA-Z0-9]+;)/g, '&amp;')
-      .replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/'/g, '&#39;').replace(/"/g, '&quot;');
-    }
+    // ,escape: function(html){
+    //   return String(html || '').replace(/&(?!#?[a-zA-Z0-9]+;)/g, '&amp;')
+    //   .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    //   .replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+    // }
     
     //事件监听
     ,on: function(events, callback){
       return layui.onevent.call(this, setter.MOD_NAME, events, callback);
-    }
-    
-    //发送验证码
-    ,sendAuthCode: function(options){
-      options = $.extend({
-        seconds: 60
-        ,elemPhone: '#LAY_phone'
-        ,elemVercode: '#LAY_vercode'
-      }, options);
-
-      var seconds = options.seconds
-      ,btn = $(options.elem)
-      ,token = null
-      ,timer, countDown = function(loop){
-        seconds--;
-        if(seconds < 0){
-          btn.removeClass(DISABLED).html('获取验证码');
-          seconds = options.seconds;
-          clearInterval(timer);
-        } else {
-          btn.addClass(DISABLED).html(seconds + '秒后重获');
-        }
-
-        if(!loop){
-          timer = setInterval(function(){
-            countDown(true);
-          }, 1000);
-        }
-      };
-      
-      options.elemPhone = $(options.elemPhone);
-      options.elemVercode = $(options.elemVercode);
-
-      btn.on('click', function(){
-        var elemPhone = options.elemPhone
-        ,value = elemPhone.val();
-
-        if(seconds !== options.seconds || $(this).hasClass(DISABLED)) return;
-
-        if(!/^1\d{10}$/.test(value)){
-          elemPhone.focus();
-          return layer.msg('请输入正确的手机号')
-        };
-        
-        if(typeof options.ajax === 'object'){
-          var success = options.ajax.success;
-          delete options.ajax.success;
-        }
-        
-        admin.req($.extend(true, {
-          url: '/auth/code'
-          ,type: 'get'
-          ,data: {
-            phone: value
-          }
-          ,success: function(res){
-            layer.msg('验证码已发送至你的手机，请注意查收', {
-              icon: 1
-              ,shade: 0
-            });
-            options.elemVercode.focus();
-            countDown();
-            success && success(res);
-          }
-        }, options.ajax));
-      });
     }
     
     //屏幕类型
@@ -334,8 +268,7 @@ layui.define('view', function(exports){
         document.msExitFullscreen();  
       }
     }
-    
-    //……
+
   };
   
   //事件
@@ -401,37 +334,6 @@ layui.define('view', function(exports){
           view(this.id).render('system/theme')
         }
       });
-    }
-    
-    //便签
-    ,note: function(othis){
-      var mobile = admin.screen() < 2
-      ,note = layui.data(setter.tableName).note;
-      
-      events.note.index = admin.popup({
-        title: '便签'
-        ,shade: 0
-        ,offset: [
-          '41px'
-          ,(mobile ? null : (othis.offset().left - 250) + 'px')
-        ]
-        ,anim: -1
-        ,id: 'LAY_adminNote'
-        ,skin: 'layadmin-note layui-anim layui-anim-upbit'
-        ,content: '<textarea placeholder="内容"></textarea>'
-        ,resize: false
-        ,success: function(layero, index){
-          var textarea = layero.find('textarea')
-          ,value = note === undefined ? '便签中的内容会存储在本地，这样即便你关掉了浏览器，在下次打开时，依然会读取到上一次的记录。是个非常小巧实用的本地备忘录' : note;
-          
-          textarea.val(value).focus().on('keyup', function(){
-            layui.data(setter.tableName, {
-              key: 'note'
-              ,value: this.value
-            });
-          });
-        }
-      })
     }
 
     //全屏
@@ -598,70 +500,22 @@ layui.define('view', function(exports){
       admin.sideFlexible();
     }
     
-    //检查更新
-    ,update: function(){
-      $.ajax({
-        type: 'get',
-        dataType: 'jsonp',
-        data: {
-          name: 'layuiAdmin'
-          ,version: admin.v
-        },
-        url: 'https://fly.layui.com/api/product_update/',
-        success: function(res){
-          if(res.status === 0) {
-            if(res.version === admin.v.replace(/\s|pro|std/g, '')){
-              layer.alert('当前版本已经是最新版本');
-            } else {
-              layer.alert('检查到更新，是否前往下载？', {
-                btn: ['更新', '暂不']
-              }, function(index){
-                layer.close(index);
-                layer.open({
-                  type: 2
-                  ,content: 'https://fly.layui.com/user/product/'
-                  ,area: ['100%', '100%']
-                  ,title: '检查更新'
-                });
-              });
-            }
-          } else if(res.status == 1){
-            layer.alert(res.msg, {
-              btn: ['登入', '暂不']
-            }, function(index){
-              layer.close(index);
-              layer.open({
-                type: 2
-                ,content: 'https://fly.layui.com/user/login/'
-                ,area: ['100%', '100%']
-                ,title: '检查更新'
-              });
-            });
-          } else {
-            layer.msg(res.msg || res.code, {shift: 6});
-          }
-        }, error: function(e){
-          layer.msg('请求异常，请重试', {shift: 6});
-        }
-      });
-    }
-    
     //呼出IM 示例
-    ,im: function(){
-      admin.popup({
-        id: 'LAY-popup-layim-demo' //定义唯一ID，防止重复弹出
-        ,shade: 0
-        ,area: ['800px', '300px']
-        ,title: '面板外的操作示例'
-        ,offset: 'lb'
-        ,success: function(){
-          //将 views 目录下的某视图文件内容渲染给该面板
-          layui.view(this.id).render('layim/demo').then(function(){
-            layui.use('im');
-          });
-        }
-      })
-    }
+    // ,im: function(){
+    //   admin.popup({
+    //     id: 'LAY-popup-layim-demo' //定义唯一ID，防止重复弹出
+    //     ,shade: 0
+    //     ,area: ['800px', '300px']
+    //     ,title: '面板外的操作示例'
+    //     ,offset: 'lb'
+    //     ,success: function(){
+    //       //将 views 目录下的某视图文件内容渲染给该面板
+    //       layui.view(this.id).render('layim/demo').then(function(){
+    //         layui.use('im');
+    //       });
+    //     }
+    //   })
+    // }
   };
   
   //初始

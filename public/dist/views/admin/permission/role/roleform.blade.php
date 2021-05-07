@@ -42,7 +42,7 @@
       let form = layui.form;
       form.on('submit(LAY-user-role-submit)', function (data){
         let params = data.field;
-        axios.post('{{route("role.administrators.roleform")}}',params).then(res=>{
+        axios.post('{{route("admin.permission.role.roleform")}}',params).then(res=>{
 
         }).catch(err=>{
 

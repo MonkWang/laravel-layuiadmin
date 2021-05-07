@@ -17,8 +17,14 @@ class Role extends Controller
 //        $this->middleware('auth');
     }
 
-    public function list()
+    public function list(Request $request)
     {
+        if($request->method() == 'POST'){
+            $base = new \App\Models\Role();
+            $count = $base -> count();
+            $data = $base ->get();
+            return $this->returnJson(['code'=>0, 'count'=>$count, 'data'=>$data]);
+        }
         return view('admin.permission.role.list');
     }
 

@@ -93,8 +93,7 @@ $.extend({
                 }
             })
         }).catch(error=>{
-            layer.msg('请求错误');
-            console.log(error.response.data);
+            console.log(error)
         })
     },
 

@@ -78,23 +78,20 @@ layui.extend({
   
   //初始
   if(admin.screen() < 2) admin.sideFlexible();
-  
+
   //将模块根路径设置为 controller 目录
-  layui.config({
-    base: setter.base + 'modules/'
-  });
+  // layui.config({
+  //   base: setter.base + 'modules/'
+  // });
   
   //扩展 lib 目录下的其它模块
-  layui.each(setter.extend, function(index, item){
-    var mods = {};
-    mods[item] = '{/}' + setter.base + 'lib/extend/' + item;
-    layui.extend(mods);
-  });
+  // layui.each(setter.extend, function(index, item){
+  //   var mods = {};
+  //   mods[item] = '{/}' + setter.base + 'lib/extend/' + item;
+  //   layui.extend(mods);
+  // });
   
   view().autoRender();
-  
-  //加载公共模块
-  layui.use('common');
 
   //对外输出
   exports('index', {
