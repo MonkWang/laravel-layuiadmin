@@ -11,7 +11,7 @@
  Target Server Version : 80023
  File Encoding         : 65001
 
- Date: 07/05/2021 23:11:50
+ Date: 08/05/2021 09:24:25
 */
 
 SET NAMES utf8mb4;
@@ -91,7 +91,7 @@ CREATE TABLE `merchants` (
 -- Records of merchants
 -- ----------------------------
 BEGIN;
-INSERT INTO `merchants` VALUES (1, 'admin', NULL, 'admin@admin', NULL, '$2y$10$dJKIHKhwoLWZGVPhJiXbxuNVXH84daNFj9vNvioyBAtr/C0P4sAYq', NULL, NULL, NULL, '2021-05-02 10:55:02', '2021-05-02 10:55:02');
+INSERT INTO `merchants` VALUES (1, 'admin1', NULL, 'admin@admin', NULL, '$2y$10$dJKIHKhwoLWZGVPhJiXbxuNVXH84daNFj9vNvioyBAtr/C0P4sAYq', NULL, NULL, NULL, '2021-05-02 10:55:02', '2021-05-02 10:55:02');
 COMMIT;
 
 -- ----------------------------
@@ -211,17 +211,17 @@ INSERT INTO `permissions` VALUES (11, '商户管理', 'web', 10, 0, NULL, NULL, 
 INSERT INTO `permissions` VALUES (12, '店铺管理', 'web', 10, 0, NULL, NULL, 1, 'admin.user.store.list', 1);
 INSERT INTO `permissions` VALUES (13, '用户管理', 'web', 10, 0, NULL, NULL, 1, 'admin.user.user.list', 1);
 INSERT INTO `permissions` VALUES (14, '主页', 'merchant', 0, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (15, '控制台', 'merchant', 14, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (15, '控制台', 'merchant', 14, 0, NULL, NULL, 1, 'merchant.home.console', 1);
 INSERT INTO `permissions` VALUES (16, '权限', 'merchant', 0, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (17, '权限管理', 'merchant', 16, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (18, '角色管理', 'merchant', 16, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (19, '管理员管理', 'merchant', 16, 0, NULL, NULL, 1, NULL, 1);
-INSERT INTO `permissions` VALUES (20, '设置', 'merchant', 0, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (21, '系统设置', 'merchant', 20, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (22, '我的设置', 'merchant', 20, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (23, '用户', 'merchant', 0, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (24, '店铺管理', 'merchant', 23, 0, NULL, NULL, 1, NULL, 0);
-INSERT INTO `permissions` VALUES (25, '用户管理', 'merchant', 23, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (17, '权限管理', 'merchant', 16, 0, NULL, NULL, 1, 'merchant.permission.permission.list', 1);
+INSERT INTO `permissions` VALUES (18, '角色管理', 'merchant', 16, 0, NULL, NULL, 1, 'merchant.permission.role.list', 1);
+INSERT INTO `permissions` VALUES (19, '管理员管理', 'merchant', 16, 0, NULL, NULL, 1, 'merchant.permission.member.list', 1);
+INSERT INTO `permissions` VALUES (20, '设置', 'merchant', 0, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (21, '系统设置', 'merchant', 20, 0, NULL, NULL, 1, 'merchant.set.system.website', 1);
+INSERT INTO `permissions` VALUES (22, '我的设置', 'merchant', 20, 0, NULL, NULL, 1, 'merchant.set.system.website', 1);
+INSERT INTO `permissions` VALUES (23, '用户', 'merchant', 0, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (24, '店铺管理', 'merchant', 23, 0, NULL, NULL, 1, 'merchant.user.store.list', 1);
+INSERT INTO `permissions` VALUES (25, '用户管理', 'merchant', 23, 0, NULL, NULL, 1, 'merchant.user.user.list', 1);
 INSERT INTO `permissions` VALUES (26, '主页', 'store', 0, 0, NULL, NULL, 1, NULL, 1);
 INSERT INTO `permissions` VALUES (27, '控制台', 'store', 26, 0, NULL, NULL, 1, NULL, 1);
 INSERT INTO `permissions` VALUES (28, '权限', 'store', 0, 0, NULL, NULL, 1, NULL, 1);
