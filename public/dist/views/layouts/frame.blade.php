@@ -15,7 +15,6 @@
     <script src="{{asset('dist/layuiadmin/layui/layui.js')}}"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/selfjs.js')}}"></script>
-
 </head>
 <body>
 

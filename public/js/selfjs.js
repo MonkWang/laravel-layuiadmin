@@ -87,7 +87,7 @@ $.extend({
                 if(res.data.code == 200){
                     if(typeof href === 'boolean'){
                         window.location.reload();
-                    } else if(typeof href === "string"){
+                    } else if(typeof href === "string" || res.data.href != undefined){
                         window.location.href = href;
                     }
                 }

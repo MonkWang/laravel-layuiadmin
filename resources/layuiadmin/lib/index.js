@@ -93,6 +93,7 @@ layui.extend({
   
   view().autoRender();
 
+
   //对外输出
   exports('index', {
     openTabsPage: openTabsPage

@@ -2,364 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dea5685a-c9b3-477f-9451-8103a19a68de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wjlaravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wjlaravel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/console/prograss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/console/top-card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/console/top-search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/content/comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/content/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/content/tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/forum/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/forum/replys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/layer/photos.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/layim/getList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/layim/getMembers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/mall/order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/message/all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/message/detail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/message/direct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/message/new.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/message/notice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/table/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/table/demo2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/table/demo3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/table/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/table/user30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/upload/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/forget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/logout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/reg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/resetpass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/session.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/user/sms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/useradmin/mangadmin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/useradmin/role.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/useradmin/webuser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/workorder/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/json/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/lib/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/layuiadmin/lib/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/layuiadmin/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/console.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/contlist.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/forum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/im.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/message.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/sample.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/senior.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/set.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/useradmin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/modules/workorder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/layim/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/system/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/system/get.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/system/more.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/system/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/system/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/layuiadmin/tpl/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/member/adminform.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/member/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/permission/adminform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/admin/permission/permission/adminform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/permission/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/admin/permission/permission/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/role/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/admin/permission/role/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/role/roleform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/admin/permission/role/roleform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/user/store/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/admin/user/store/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/user/store/userform.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/content/comment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/content/contform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/content/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/content/listform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/content/tags.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/content/tagsform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/forum/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/forum/listform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/forum/replys.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/forum/replysform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/message/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/message/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/workorder/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/workorder/listform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/app/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/anim/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/auxiliar/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/badge/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/button/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/carousel/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/code/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/colorpicker/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/flow/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/form/element.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/form/group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/grid/all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/grid/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/grid/mobile-pc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/grid/mobile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/grid/speed-dial.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/grid/stack.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laydate/demo1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laydate/demo2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laydate/special-demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laydate/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/layer/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/layer/special-demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/layer/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laypage/demo1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laypage/demo2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/laytpl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/nav/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/panel/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/progress/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/rate/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/slider/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/cellEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/cellEvent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/fixed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/height.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/initSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/onrow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/operate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/parseData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/radio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/reload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/resetPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/simple.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/static.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/style.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/thead.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/toolbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/tostatic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/table/totalRow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/tabs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/temp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/timeline/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/transfer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/tree/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/upload/demo1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/upload/demo2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/util/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/component/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/home/console.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/home/homepage1.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/home/homepage1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/home/homepage2.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/home/homepage2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/iframe/layer/iframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/layouts/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/layouts/content.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/views/admin/permission/admin/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/admin/permission/admin/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/dist/views/layouts/frame.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/layouts/frame.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/senior/echarts/bar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/senior/echarts/line.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/senior/echarts/map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/senior/im/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/senior/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/system/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/addresslist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/caller.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/goodslist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/msgboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/personalpage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/temp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/tips/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/tips/error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/template/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/user/administrators/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/user/administrators/role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/views/user/administrators/roleform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/views/user/administrators/roleform.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/selfjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/selfjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/selfjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/selfjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/console/prograss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/console/top-card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/console/top-search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/content/comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/content/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/content/tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/forum/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/forum/replys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/layer/photos.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/layim/getList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/layim/getMembers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/mall/order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/message/all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/message/detail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/message/direct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/message/new.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/message/notice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/table/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/table/demo2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/table/demo3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/table/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/table/user30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/upload/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/forget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/logout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/reg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/resetpass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/session.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/user/sms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/useradmin/mangadmin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/useradmin/role.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/useradmin/webuser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/workorder/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/json/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/lib/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/layuiadmin/lib/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/layuiadmin/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/layuiadmin/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/console.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/contlist.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/forum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/im.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/message.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/sample.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/senior.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/set.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/useradmin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/modules/workorder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/layim/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/system/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/system/get.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/system/more.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/system/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/system/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layuiadmin/tpl/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/admin/adminform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/admin/adminform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/admin/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/admin/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/permission/adminform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/permission/adminform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/permission/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/permission/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/role/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/role/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/role/roleform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/role/roleform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/store/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/store/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/store/userform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/store/storeform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/content/comment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/content/contform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/content/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/content/listform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/content/tags.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/content/tagsform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/forum/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/forum/listform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/forum/replys.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/forum/replysform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/message/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/message/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/workorder/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/workorder/listform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/anim/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/auxiliar/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/badge/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/button/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/carousel/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/code/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/colorpicker/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/flow/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/form/element.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/form/group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/grid/all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/grid/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/grid/mobile-pc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/grid/mobile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/grid/speed-dial.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/grid/stack.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laydate/demo1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laydate/demo2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laydate/special-demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laydate/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/layer/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/layer/special-demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/layer/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laypage/demo1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laypage/demo2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/laytpl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/nav/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/panel/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/progress/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/rate/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/slider/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/cellEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/cellEvent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/fixed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/height.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/initSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/onrow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/operate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/parseData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/radio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/reload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/resetPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/simple.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/static.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/style.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/thead.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/toolbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/tostatic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/table/totalRow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/tabs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/temp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/timeline/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/transfer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/tree/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/upload/demo1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/upload/demo2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/util/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/console.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/homepage1.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/homepage1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/homepage2.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/homepage2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/iframe/layer/iframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frame.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frame.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/senior/echarts/bar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/senior/echarts/line.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/senior/echarts/map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/senior/im/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/senior/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/addresslist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/caller.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/goodslist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/msgboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/personalpage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/temp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/tips/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/tips/error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/说明.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/administrators/role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/administrators/roleform.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/administrators/roleform.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -514,17 +166,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/merchant" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/js" />
-      <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/permission/member" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/permission" />
+      <recent name="$PROJECT_DIR$/resources/views/merchant" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Merchant" />
       <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/resources/layuiadmin/lib" />
+      <recent name="$PROJECT_DIR$/resources/js" />
     </key>
   </component>
   <component name="RunManager">
@@ -543,7 +195,7 @@
       <updated>1620306092345</updated>
       <workItem from="1620306095660" duration="8560000" />
       <workItem from="1620343144364" duration="4178000" />
-      <workItem from="1620389471550" duration="9769000" />
+      <workItem from="1620389471550" duration="15957000" />
     </task>
     <servers />
   </component>
