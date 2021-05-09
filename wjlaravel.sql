@@ -11,7 +11,7 @@
  Target Server Version : 80023
  File Encoding         : 65001
 
- Date: 08/05/2021 09:24:25
+ Date: 09/05/2021 22:43:12
 */
 
 SET NAMES utf8mb4;
@@ -191,7 +191,7 @@ CREATE TABLE `permissions` (
   `show` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否隐藏 1=隐藏 0=显示',
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of permissions
@@ -234,6 +234,7 @@ INSERT INTO `permissions` VALUES (34, '我的设置', 'store', 32, 0, NULL, NULL
 INSERT INTO `permissions` VALUES (35, '用户', 'store', 0, 0, NULL, NULL, 1, NULL, 0);
 INSERT INTO `permissions` VALUES (36, '店铺管理', 'store', 35, 0, NULL, NULL, 1, NULL, 0);
 INSERT INTO `permissions` VALUES (37, '用户管理', 'store', 35, 0, NULL, NULL, 1, NULL, 1);
+INSERT INTO `permissions` VALUES (38, '333', 'store', 0, 0, '2021-05-09 09:44:36', '2021-05-09 09:44:36', NULL, '', 0);
 COMMIT;
 
 -- ----------------------------
@@ -276,6 +277,7 @@ CREATE TABLE `roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `guard_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -286,7 +288,7 @@ CREATE TABLE `roles` (
 -- Records of roles
 -- ----------------------------
 BEGIN;
-INSERT INTO `roles` VALUES (1, 'superAdmin', 'web', '2021-05-05 22:21:03', '2021-05-05 22:21:03');
+INSERT INTO `roles` VALUES (1, 'superAdmin', 'web', NULL, '2021-05-05 22:21:03', '2021-05-05 22:21:03');
 COMMIT;
 
 -- ----------------------------
