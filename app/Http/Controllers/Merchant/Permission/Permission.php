@@ -30,7 +30,7 @@ class Permission extends Controller
             $count = $base->count();
             $data = $base->get();
 
-            return $this->returnJson(['code'=>0, 'count'=>$count, 'data'=>$data]);
+            return $this->returnTable($count, $data);
         }
 
         return view('admin.permission.permission.list');

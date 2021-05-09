@@ -80,9 +80,8 @@
         form.render();
         //提交
         form.on('submit(LAY-user-login-submit)', function(obj){
-            $.selfPost('{{route("login")}}', obj.field)
+            $.selfPost('{{route("admin.login")}}', obj.field)
         });
-
     });
 </script>
 </body>

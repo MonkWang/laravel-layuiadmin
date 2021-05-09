@@ -23,7 +23,7 @@ class Role extends Controller
             $base = new \App\Models\Role();
             $count = $base -> count();
             $data = $base ->get();
-            return $this->returnJson(['code'=>0, 'count'=>$count, 'data'=>$data]);
+            return $this->returnTable($count, $data);
         }
         return view('admin.permission.role.list');
     }

@@ -22,9 +22,11 @@ use App\Http\Controllers\Merchant\{
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::any('merchant/login', [LoginController::class, 'login'])->name('merchant.login');
+
 //首页
-Route::group(['prefix'=>'merchant'], function(){
-    Route::any('/login', [LoginController::class, 'login'])->name('merchant.login');
+Route::group(['prefix'=>'merchant', 'middleware'=>[ 'menus']], function(){
 
     Route::get('/home', [HomeController::class, 'index'])->name('merchant.home');
     Route::get('/home/console', [HomeController::class, 'console'])->name('merchant.home.console');

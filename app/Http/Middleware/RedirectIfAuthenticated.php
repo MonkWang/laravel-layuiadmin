@@ -22,13 +22,16 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                view()->share('guard', $guard);
                 if($guard == 'web'){
                     $guard = '';
                 }
-                return redirect($guard.RouteServiceProvider::HOME);
+                $referer = $request->headers->get('referer');
+                if(in_array($referer, [route('admin.login'), route('merchant.login')])){
+                    return redirect($guard.RouteServiceProvider::HOME);
+                }
             }
         }
-
         return $next($request);
     }
 }

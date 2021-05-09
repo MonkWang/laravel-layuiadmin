@@ -52,79 +52,79 @@ layui.define(['laytpl', 'layer'], function(exports){
   };
   
   //Ajax请求
-  view.req = function(options){
-    var that = this
-    ,success = options.success
-    ,error = options.error
-    ,request = setter.request
-    ,response = setter.response
-    ,debug = function(){
-      return setter.debug 
-        ? '<br><cite>URL：</cite>' + options.url
-      : '';
-    };
-    
-    options.data = options.data || {};
-    options.headers = options.headers || {};
-    
-    if(request.tokenName){
-      var sendData = typeof options.data === 'string' 
-        ? JSON.parse(options.data) 
-      : options.data;
-
-      //自动给参数传入默认 token
-      options.data[request.tokenName] = request.tokenName in sendData
-        ?  options.data[request.tokenName]
-      : (layui.data(setter.tableName)[request.tokenName] || '');
-      
-      //自动给 Request Headers 传入 token
-      options.headers[request.tokenName] = request.tokenName in options.headers 
-        ?  options.headers[request.tokenName]
-      : (layui.data(setter.tableName)[request.tokenName] || '');
-    }
-    
-    delete options.success;
-    delete options.error;
-
-    return $.ajax($.extend({
-      type: 'get'
-      ,dataType: 'json'
-      ,success: function(res){
-        var statusCode = response.statusCode;
-        console.log(res, response.statusName, statusCode.ok);
-        //只有 response 的 code 一切正常才执行 done
-        if(res[response.statusName] == statusCode.ok) {
-          typeof options.done === 'function' && options.done(res); 
-        } 
-        
-        //登录状态失效，清除本地 access_token，并强制跳转到登入页
-        else if(res[response.statusName] == statusCode.logout){
-          view.exit();
-        }
-        
-        //其它异常
-        else {
-          var errorText = [
-            '<cite>Error：</cite> ' + (res[response.msgName] || '返回状态码异常')
-            ,debug()
-          ].join('');
-          view.error(errorText);
-        }
-        
-        //只要 http 状态码正常，无论 response 的 code 是否正常都执行 success
-        typeof success === 'function' && success(res);
-      }
-      ,error: function(e, code){
-        var errorText = [
-          '请求异常，请重试<br><cite>错误信息：</cite>'+ code 
-          ,debug()
-        ].join('');
-        view.error(errorText);
-        
-        typeof error === 'function' && error(res);
-      }
-    }, options));
-  };
+  // view.req = function(options){
+  //   var that = this
+  //   ,success = options.success
+  //   ,error = options.error
+  //   ,request = setter.request
+  //   ,response = setter.response
+  //   ,debug = function(){
+  //     return setter.debug
+  //       ? '<br><cite>URL：</cite>' + options.url
+  //     : '';
+  //   };
+  //
+  //   options.data = options.data || {};
+  //   options.headers = options.headers || {};
+  //
+  //   if(request.tokenName){
+  //     var sendData = typeof options.data === 'string'
+  //       ? JSON.parse(options.data)
+  //     : options.data;
+  //
+  //     //自动给参数传入默认 token
+  //     options.data[request.tokenName] = request.tokenName in sendData
+  //       ?  options.data[request.tokenName]
+  //     : (layui.data(setter.tableName)[request.tokenName] || '');
+  //
+  //     //自动给 Request Headers 传入 token
+  //     options.headers[request.tokenName] = request.tokenName in options.headers
+  //       ?  options.headers[request.tokenName]
+  //     : (layui.data(setter.tableName)[request.tokenName] || '');
+  //   }
+  //
+  //   delete options.success;
+  //   delete options.error;
+  //
+  //   return $.ajax($.extend({
+  //     type: 'get'
+  //     ,dataType: 'json'
+  //     ,success: function(res){
+  //       var statusCode = response.statusCode;
+  //       console.log(res, response.statusName, statusCode.ok);
+  //       //只有 response 的 code 一切正常才执行 done
+  //       if(res[response.statusName] == statusCode.ok) {
+  //         typeof options.done === 'function' && options.done(res);
+  //       }
+  //
+  //       //登录状态失效，清除本地 access_token，并强制跳转到登入页
+  //       else if(res[response.statusName] == statusCode.logout){
+  //         view.exit();
+  //       }
+  //
+  //       //其它异常
+  //       else {
+  //         var errorText = [
+  //           '<cite>Error：</cite> ' + (res[response.msgName] || '返回状态码异常')
+  //           ,debug()
+  //         ].join('');
+  //         view.error(errorText);
+  //       }
+  //
+  //       //只要 http 状态码正常，无论 response 的 code 是否正常都执行 success
+  //       typeof success === 'function' && success(res);
+  //     }
+  //     ,error: function(e, code){
+  //       var errorText = [
+  //         '请求异常，请重试<br><cite>错误信息：</cite>'+ code
+  //         ,debug()
+  //       ].join('');
+  //       view.error(errorText);
+  //
+  //       typeof error === 'function' && error(res);
+  //     }
+  //   }, options));
+  // };
   
   //弹窗
   view.popup = function(options){

@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -28,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = 'admin/home';
 
     /**
      * Create a new controller instance.
@@ -37,7 +38,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
 
     /**
@@ -92,7 +93,9 @@ class LoginController extends Controller
             return $response;
         }
 
-        return response()->json(['code'=>0]);
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('admin/login');
     }
 
     /**
@@ -107,11 +110,10 @@ class LoginController extends Controller
 
         $this->clearLoginAttempts($request);
 
-        if ($response = $this->authenticated($request, $this->guard()->user())) {
+        if ($response = $this->authenticated($request, $this->guard('admin')->user())) {
             return $response;
         }
-
-        $redirect = $request->header('referer') == route('login') ? '/home' : $request->header('referer');
+        $redirect = $request->header('referer') == route('admin.login') ? 'admin/home' : $request->header('referer');
         return response()->json(['code'=>200, 'href'=>$redirect]);
     }
 

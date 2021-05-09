@@ -62,7 +62,6 @@
         </table>
         <script type="text/html" id="buttonTpl">
             <button class="layui-btn layui-btn-xs">已审核</button>
-
         </script>
         <script type="text/html" id="table-useradmin-admin">
           <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>

@@ -10,7 +10,6 @@ class Permissions extends Authenticatable
 {
     use HasFactory;
     protected $table = 'permissions';
-    protected $dateFormat = 'U';
 
     public function child_hasMany()
     {

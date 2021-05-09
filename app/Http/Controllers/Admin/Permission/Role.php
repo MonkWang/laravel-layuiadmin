@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Permission;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+USE App\Models\Role as Roles;
 
 class Role extends Controller
 {
@@ -23,7 +24,7 @@ class Role extends Controller
             $base = new \App\Models\Role();
             $count = $base -> count();
             $data = $base ->get();
-            return $this->returnJson(['code'=>0, 'count'=>$count, 'data'=>$data]);
+            return $this->returnTable($count, $data);
         }
         return view('admin.permission.role.list');
     }
@@ -35,8 +36,9 @@ class Role extends Controller
                 'descr' => 'required|string',
                 'rolename' => 'required|int|min:0',
             ]);
-
         }
-        return view('admin.permission.role.roleform');
+        $role = Roles::where('id', (int)$request->id)->first() ?? [];
+
+        return view('admin.permission.role.roleform', compact('role'));
     }
 }

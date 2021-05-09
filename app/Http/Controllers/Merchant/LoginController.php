@@ -117,7 +117,7 @@ class LoginController extends Controller
             return $response;
         }
 
-        $redirect = $request->header('referer') == route('login') ? '/merchant/home' : $request->header('referer');
+        $redirect = $request->header('referer') == route('merchant.login') ? '/merchant/home' : $request->header('referer');
         return response()->json(['code'=>200, 'href'=>$redirect]);
     }
 

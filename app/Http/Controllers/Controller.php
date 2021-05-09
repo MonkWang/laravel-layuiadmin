@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Permissions;
+use http\Env\Response;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -17,11 +18,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function __construct()
-    {
-        $this->menus();
-    }
-
     public function selfValidator(array $data, array $rule, array $attr)
     {
 
@@ -32,40 +28,23 @@ class Controller extends BaseController
         }
     }
 
-    public function returnJson(array $data)
+    public function returnJsonArr(array $data)
     {
         return response()->json($data);
     }
 
-    public function menus()
+    public function returnJson(string $code, string $msg="", string|array $data = "")
     {
-        $admin = Auth::guard('admin')->user();
-        if(!$admin){
-            $merchant = Auth::guard('merchant')->user();
-            if(!$merchant){
-                $store = Auth::guard('store')->user();
-                if(!$store){
-                    $guard = false;
-                } else {
-                    $guard = 'store';
-                }
-            } else {
-                $guard = 'merchant';
-            }
-        } else {
-            $guard = 'web';
-        }
+        return response()->json(['code'=>$code, 'msg'=>$msg, 'data'=>$data]);
+    }
 
-        if($guard){
-            $menus = Permissions::with('child_hasMany')
-                ->where('is_menus', 1)
-                ->where('pid', 0)
-                ->where('guard_name', $guard)
-                ->where('show', 1)
-                ->get();;
-        } else {
-            $menus = [];
-        }
-        view()->share('menus', $menus);
+    public function returnMsg(int $code, string $msg)
+    {
+        return response()->json(['code'=>$code, 'msg'=>$msg]);
+    }
+
+    public function returnTable(int $count, array|object $data)
+    {
+        return \response()->json(['code'=>0, 'count'=>$count, 'data'=>$data]);
     }
 }
